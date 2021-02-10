@@ -39,6 +39,11 @@ with open('requirements.txt') as f:
         req = line.split('#')[0].strip()
         install_requires.append(req)
 
+data_files = [
+    'data/hiraganaChart.txt',
+    'data/katakanaChart.txt',
+]
+
 setup(
     name="japanese2phoneme",
     version=version,
@@ -55,13 +60,11 @@ setup(
         "Natural Language :: English",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: Implementation :: CPython",
     ],
     packages=find_packages(),
+    package_data={'japanese2phoneme': data_files},
     zip_safe=False,
     setup_requires=setup_requires,
     install_requires=install_requires,
