@@ -37,7 +37,7 @@ def read_japanese_sentence(target_sent: str):
             if word == "":
                 continue
 
-            kana = ginza.reading_form(tok)
+            kana = ginza.reading_form(tok, use_orth_if_none=True)
 
             if kana != '*':
                 tokens.append(kana)
